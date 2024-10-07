@@ -5,10 +5,10 @@ void outer(String name, String id) {
     // splits the name into a first and last name
     List<String> nameFormat = name.split(' ');
     String firstName = nameFormat[0];
-    String lastName = nameFormat[1];
 
-    var message = "Hello Agent B.$firstName $lastName your id is $id";
+    var message = "Hello Agent B.$firstName your id is $id";
     return message;
   }
+
   print(inner());
 }
