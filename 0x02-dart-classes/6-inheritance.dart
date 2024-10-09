@@ -4,12 +4,10 @@ class User extends Password {
   String name;
   int age, id;
   double height;
-  String? user_password;
+
 
   // constructor
-  User({required this.id, required this.name, required this.age, required this.height, required String user_password}) : super(password: user_password) {
-    this.user_password = user_password;
-  }
+  User({required this.id, required this.name, required this.age, required this.height, required String user_password}) : super(password: user_password);
 
   // map representation of the user
   Map<String, dynamic> toJson() {
@@ -35,6 +33,14 @@ class User extends Password {
   @override
   String toString() {
     return 'User(id : $id ,name: $name, age: $age, height: $height, Password: ${isValid()})';
+  }
+
+  // retrieve user_password to access from outside
+  String? get user_password => password;
+
+  // setter for user_password
+  set user_password(String? newPassword) {
+    password = newPassword;
   }
 
 }

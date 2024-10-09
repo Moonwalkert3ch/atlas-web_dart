@@ -4,15 +4,15 @@
 
 class Password {
   // private property
-  String _password;
+  String? _password;
 
   // define getter
-  String get password {
+  String? get password {
     return _password;
   }
 
   // define setter
-  set password(String newPassword) {
+  set password(String? newPassword) {
     this._password = newPassword;
   }
 
@@ -23,7 +23,7 @@ class Password {
   bool isValid() {
     if (_password == Null) return false;
 
-    String entry = _password;
+    String entry = _password!;
 
     // check length must be 8-16 chars
     if (entry.length < 8 || entry.length > 16) {
